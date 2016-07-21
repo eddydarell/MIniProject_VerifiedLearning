@@ -3,29 +3,45 @@
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>MiniProject  <small>Learning is fun.</small></h1>
+    <p>Learn reading and writing the easy way.</p>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2 class="text-center">Easy Learning</h2>
+        <hr />
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            Let's you select a category and start.<br />
+            For learning the easy way at your own pace.
         </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <hr />
+        <div class="text-center">
+            <a href="@Url.Action("EasyLearning")" class="btn btn-primary btn-lg" title="Easy learning">Easy Learning</a>
+        </div>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2 class="text-center">Challenges</h2>
+        <hr />
+        <p>
+            Already comfortable with the game?<br />
+            Try one of our challenges to further sharpen your skills
+        </p>
+        <hr />
+        <div class="text-center">
+            <a href="@Url.Action("Challenges")" class="btn btn-warning btn-lg" title="Challenges">Challenges</a>
+        </div>
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2 class="text-center">Leader-board</h2>
+        <hr />
+        <p>
+            Make your way to the top.<br />
+            See who did the best and try to beat them.
+        </p>
+        <hr />
+        <div class="text-center">
+            <a href="@Url.Action("LeaderBoard")" class="btn btn-success btn-lg" title="Leader-Board">Leader-board</a>
+        </div>
     </div>
 </div>
