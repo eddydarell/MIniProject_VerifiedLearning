@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -25,9 +26,7 @@ namespace MiniProject_VerifiedProject.Models
     {
         [Key]
         public int ID { get; set; }
-
         public string ColorName { get; set; }
-
         public string ColorHexa { get; set; }
     }
     public class WordPuzzle

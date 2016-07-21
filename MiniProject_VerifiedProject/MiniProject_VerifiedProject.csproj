@@ -1037,6 +1037,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\version.json" />
+    <Content Include="Views\Home\QuestionBoard.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
