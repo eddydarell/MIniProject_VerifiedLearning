@@ -1,13 +1,9 @@
 ﻿using System;
-<<<<<<< HEAD
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-=======
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
->>>>>>> refs/remotes/origin/VST
 
 namespace MiniProject_VerifiedProject.Models
 {
@@ -34,13 +30,9 @@ namespace MiniProject_VerifiedProject.Models
         [Key]
         public int ID { get; set; }
         public string ColorName { get; set; }
-<<<<<<< HEAD
-        public string ColorHexa { get; set; }
-=======
         public string ColorHex { get; set; }
 
-
->>>>>>> refs/remotes/origin/VST
+        
     }
     public class WordPuzzle
     {
