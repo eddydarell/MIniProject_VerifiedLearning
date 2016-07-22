@@ -1,0 +1,109 @@
+﻿@{
+
+}
+<div ng-controller="CategoryOneCtrl">
+    <div class="col-md-12">
+        <div class="panel panel-default" ng-hide="gameEnded">
+            <div class="panel-heading fixed-heading">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <h3 class="text-center">{{ score }} points</h3>
+                    </div>
+                    <div class="col-sm-6">
+                        <h3 class="text-center">Name The Picture </h3>
+                    </div>
+                    <div class="col-sm-3">
+                        <h3 class="text-center">Countdown</h3>
+                    </div>
+                </div>
+
+            </div>
+            <div class="panel-body">
+                <div class="text-center img-box">
+                    <img ng-src="{{ question.imageUrl }}" alt="Image here" />
+                </div>
+                <hr />
+                <div class="text-center row">
+                    <div class="col-md-10">
+                        <input type="text" class="very-large-input" placeholder="What do you see?" ng-model="answer" ng-disabled="disabled"/>
+                    </div>
+                    <div class="col-md-2">
+                        <button ng-click="checkAnswer()" class="btn btn-success btn-sm big-btn">OK</button>
+                    </div>
+                </div>
+            </div>
+            <div class="alert alert-success" ng-show="success">
+                <h1 class="text-center">Correct!</h1>
+                <hr />
+                <p class="text-center">
+                    <b class="correct">{{ answer }}</b> is the correct answer! Well Done!
+                </p>
+            </div>
+            <div class="alert alert-danger" ng-show="failure">
+                <h1 class="text-center">Failed!</h1>
+                <hr />
+                <p class="text-center">
+                    <b class="incorrect">{{ answer }}</b> is not correct<br />
+                    The correct answer is <b class="correct">{{ question.correctAnswer }}</b>
+                </p>
+            </div>
+            <hr />
+            <div class="panel-footer fixed-footer">
+                <div class="row">
+                    <div class="col-lg-3 text-center">
+                        <h3>
+                            <button ng-click="quit()" class="btn btn-lg btn-danger">
+                                Quit
+                                <span class="glyphicon glyphicon-stop"></span>
+                            </button>
+                        </h3>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <h3>Question {{ counter }} of {{ totalQuestions }}</h3>
+                    </div>
+                    <div class="col-lg-3 text-center">
+                        <h3>
+                            <button ng-click="nextQuestion()" class="btn btn-lg btn-warning">
+                                Next
+                                <span class="glyphicon glyphicon-arrow-right"></span>
+                            </button>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-show="gameEnded">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="text-center">Your Results</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td>Question Number</td>
+                                <td>Your Answer</td>
+                                <td>Correct Answer</td>
+                                <td></td>
+                            </tr>
+                            <tr ng-repeat="element in results">
+                                <td class="text-center">{{ element.questionNumber }}</td>
+                                <td class="text-center">{{ element.givenAnswer }}</td>
+                                <td class="text-center">{{ element.correctAnswer }}</td>
+                                <td ng-class="element.color" class="text-center">{{ element.mark }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">Your Score: {{ score }} / {{ 2 }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <hr />
+            <div class="btn-group">
+                <button class="btn btn-default btn-lg" ng-click="reload()">Try Again!</button>
+                <button class="btn btn-danger btn-lg" ng-click="quit()">Quit!</button>
+            </div>
+        </div>
+    </div>
+</div>
