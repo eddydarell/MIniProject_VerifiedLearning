@@ -21,7 +21,7 @@ var indexCtrl = miniProject.controller("IndexCtrl", function ($window, $scope, $
     };
 });
 
-//COntroller for the first game category
+//Controller for the first game category
 var categoryOne = miniProject.controller("CategoryOneCtrl", function ($scope, $timeout, $window) {
     $scope.question;
     $scope.answer = "";
@@ -144,4 +144,25 @@ var categoryOne = miniProject.controller("CategoryOneCtrl", function ($scope, $t
 
     $scope.nextQuestion = nextQuestion;
     $scope.quit = quit;
+});
+
+
+//Controller for the second game category
+var categoryTwo = miniProject.controller("CategoryTwoCtrl", function ($scope, $timeout, $window) {
+});
+
+//Controller for the thirs game category
+var categoryTwo = miniProject.controller("CategoryThreeCtrl", function ($scope, $timeout, $window) {
+});
+
+//Controller for the forth game category
+var categoryTwo = miniProject.controller("CategoryFourCtrl", function ($scope, $timeout, $window) {
+});
+
+//COntroller for the mix game category
+var categoryMix = miniProject.controller("CategoryMixCtrl", function ($scope, $timeout, $window) {
+});
+
+//COntroller for the Top game category
+var categoryTop = miniProject.controller("CategoryTopCtrl", function ($scope, $window) {
 });

@@ -169,6 +169,10 @@
     <Compile Include="Migrations\201607221153309_Context.Add.Designer.cs">
       <DependentUpon>201607221153309_Context.Add.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607221310595_Context.MixTop.cs" />
+    <Compile Include="Migrations\201607221310595_Context.MixTop.Designer.cs">
+      <DependentUpon>201607221310595_Context.MixTop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1055,6 +1059,11 @@
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Home\QuestionBoard.cshtml" />
     <Content Include="Views\Home\_Category_One.cshtml" />
+    <Content Include="Views\Home\_Category_Two.cshtml" />
+    <Content Include="Views\Home\_Category_Four.cshtml" />
+    <Content Include="Views\Home\_Category_Three.cshtml" />
+    <Content Include="Views\Home\_Category_Mix.cshtml" />
+    <Content Include="Views\Home\_Category_Top.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201607221145288_Initial.resx">
@@ -1062,6 +1071,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607221153309_Context.Add.resx">
       <DependentUpon>201607221153309_Context.Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607221310595_Context.MixTop.resx">
+      <DependentUpon>201607221310595_Context.MixTop.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
