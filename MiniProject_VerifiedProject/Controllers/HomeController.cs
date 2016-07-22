@@ -52,5 +52,27 @@ namespace MiniProject_VerifiedProject.Controllers
         {
             return PartialView("_Category_One");
         }
+        public PartialViewResult Category_Two()
+        {
+            return PartialView("_Category_Two");
+        }
+        public PartialViewResult Category_Three()
+        {
+            return PartialView("_Category_Three");
+        }
+        public PartialViewResult Category_Four()
+        {
+            return PartialView("_Category_Four");
+        }
+
+        public PartialViewResult Category_Mix()
+        {
+            return PartialView("_Category_Mix");
+        }
+
+        public PartialViewResult Category_Top()
+        {
+            return PartialView("_Category_Top");
+        }
     }
 }

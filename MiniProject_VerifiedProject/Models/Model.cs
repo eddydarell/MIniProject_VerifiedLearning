@@ -56,6 +56,8 @@ namespace MiniProject_VerifiedProject.Models
         public DateTime Category3ScoreDate { get; set; }
         public int Category4Score { get; set; }
         public DateTime Category4ScoreDate { get; set; }
+        public int CategoryMixScore { get; set; }
+        public DateTime CategoryMixScoreDate { get; set; }
 
     }
 }

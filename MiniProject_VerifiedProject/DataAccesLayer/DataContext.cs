@@ -1,7 +1,6 @@
-﻿using System;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using MiniProject_VerifiedProject.Models;
-using System.Data.Entity;
+
 
 namespace MiniProject_VerifiedProject.DataAccesLayer
 {
