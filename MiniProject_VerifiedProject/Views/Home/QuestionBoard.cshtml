@@ -1,7 +1,21 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "QuestionBoard";
 }
-
-<h2>QuestionBoard</h2>
-@
+<div class="row">
+    @if (ViewBag.Message == "one")
+    {
+        @Html.Action("Category_One")
+    }
+    else if (ViewBag.Message == "two")
+    {
+        @Html.Action("Category_Two")
+    }
+    else if (ViewBag.Message == "three")
+    {
+        @Html.Action("Category_Three")
+    }
+    else if (ViewBag.Message == "four")
+    {
+        @Html.Action("Category_Four")
+    }
+</div>

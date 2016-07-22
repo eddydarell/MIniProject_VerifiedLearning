@@ -23,10 +23,87 @@ textarea {
     max-width: 280px;
 }
 
-.container{
-    
+p {
+    font-size: 1.2em;
 }
 
-p{
-    font-size: 1.2em;
+.container {
+    background-color: #FCFCFC;
+    border: 1px solid #DDD;
+}
+
+body > .container {
+    padding-top: 20px;
+    box-shadow: 0px 5px 10px #888888;
+}
+
+.panel {
+    box-shadow: 0px 5px 10px #CCC;
+}
+
+img {
+    width: 250px;
+    height: auto;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.img-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+    .img-box > img {
+        flex-shrink: 0;
+        min-width: 80%;
+    }
+
+.very-large-input {
+    font-size: 3em;
+    min-width: 100%;
+    padding-left: 20px;
+}
+
+.big-btn {
+    font-size: 2.7em;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+h3 > button {
+    min-width: 100%;
+}
+
+.fixed-heading {
+    position: fixed;
+    min-width: 100%;
+    left: 0px;
+    top: 50px;
+    box-shadow: 0px 5px 10px #CCC;
+}
+
+.fixed-heading + div {
+    margin-top: 60px;
+}
+
+.correct{
+    color: green;
+    font-size: 2em;
+}
+
+.incorrect{
+    color: red;
+    font-size: 2em;
+}
+
+td{
+    font-size: 2.5em;
+}
+
+tr:first-child{
+    font-weight: bolder;
 }

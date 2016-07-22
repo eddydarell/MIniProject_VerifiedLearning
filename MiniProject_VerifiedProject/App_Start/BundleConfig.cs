@@ -25,7 +25,8 @@ namespace MiniProject_VerifiedProject
                       "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angularjs").Include(
-                        "~/Scripts/angular.min.js"));
+                        "~/Scripts/angular.min.js",
+                        "~/Scripts/app.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
