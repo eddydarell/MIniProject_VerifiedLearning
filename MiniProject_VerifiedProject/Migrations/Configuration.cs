@@ -110,16 +110,16 @@ namespace MiniProject_VerifiedProject.Migrations
             User seedTop9 = new User { Name = "Top9", Category1Score = 2, Category1ScoreDate = DateTime.Now, Category2Score = 2, Category2ScoreDate = DateTime.Now, Category3Score = 2, Category3ScoreDate = DateTime.Now, Category4Score = 2, Category4ScoreDate = DateTime.Now, };
             User seedTop10 = new User { Name = "Top10", Category1Score = 1, Category1ScoreDate = DateTime.Now, Category2Score = 1, Category2ScoreDate = DateTime.Now, Category3Score = 1, Category3ScoreDate = DateTime.Now, Category4Score = 1, Category4ScoreDate = DateTime.Now, };
 
-            context.Users.AddOrUpdate(seedTop1);
-            context.Users.AddOrUpdate(seedTop2);
-            context.Users.AddOrUpdate(seedTop3);
-            context.Users.AddOrUpdate(seedTop4);
-            context.Users.AddOrUpdate(seedTop5);
-            context.Users.AddOrUpdate(seedTop6);
-            context.Users.AddOrUpdate(seedTop7);
-            context.Users.AddOrUpdate(seedTop8);
-            context.Users.AddOrUpdate(seedTop9);
-            context.Users.AddOrUpdate(seedTop10);
+            //context.Users.AddOrUpdate(seedTop1);
+            //context.Users.AddOrUpdate(seedTop2);
+            //context.Users.AddOrUpdate(seedTop3);
+            //context.Users.AddOrUpdate(seedTop4);
+            //context.Users.AddOrUpdate(seedTop5);
+            //context.Users.AddOrUpdate(seedTop6);
+            //context.Users.AddOrUpdate(seedTop7);
+            //context.Users.AddOrUpdate(seedTop8);
+            //context.Users.AddOrUpdate(seedTop9);
+            //context.Users.AddOrUpdate(seedTop10);
         }
         
         
