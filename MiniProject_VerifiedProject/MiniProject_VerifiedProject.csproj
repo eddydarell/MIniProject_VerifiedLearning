@@ -1058,6 +1058,7 @@
     <Content Include="Views\Home\QuestionBoard.cshtml" />
     <Content Include="Views\Home\_Category_One.cshtml" />
     <Content Include="Views\Home\_Category_Two.cshtml" />
+    <Content Include="Views\Home\_Category_Three.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201607221145288_Initial.resx">
