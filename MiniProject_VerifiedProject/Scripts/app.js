@@ -1,69 +1,8 @@
-﻿//Global variables and functions
-var _Score = 0;
+﻿(function () {
+    //Global variables
+    var _Score = 0;
 
-//app module
-var miniProject = angular.module("MiniProject", []);
-
-//Controller for the index page
-var indexCtrl = miniProject.controller("IndexCtrl", function ($window, $scope, $http) {
-    $scope.categoryNumber = 0;
-
-    $scope.loadCategory = function () {
-        $http.get("/Home/QuestionBoard/")
-                .success(function (data, header, status, config) {
-                    console.log("Success!");
-                    $window.location.href = "/Home/QuestionBoard?categoryNumber=" + $scope.categoryNumber;
-                })
-                .error(function (data, header, status, config) {
-                    console.log("Failure");
-                    console.log(data);
-                });
-    };
-});
-
-//COntroller for the first game category
-var categoryOne = miniProject.controller("CategoryOneCtrl", function ($scope, $timeout, $window) {
-    $scope.question;
-    $scope.answer = "";
-    $scope.success = false;
-    $scope.failure = false;
-    $scope.disabled = false;
-    $scope.gameEnded = false;
-    $scope.score = 0;
-    var questionIndex = 0;
-
-    var question1 = {
-        correctAnswer: "square",
-        imageUrl: "https://i.ytimg.com/vi/rb8Y38eilRM/maxresdefault.jpg"
-    };
-
-    var question2 = {
-        correctAnswer: "circle",
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Circle_-_black_simple.svg/2000px-Circle_-_black_simple.svg.png"
-    };
-
-    var question3 = {
-        correctAnswer: "triangle",
-        imageUrl: "http://vignette2.wikia.nocookie.net/uncyclopedia/images/8/88/Triangle(shape).jpg/revision/latest?cb=20121214140518"
-    };
-
-    var question4 = {
-        correctAnswer: "hexagon",
-        imageUrl: "https://image.freepik.com/free-icon/hexagon-geometrical-shape-outline_318-48664.png"
-    };
-
-    var questions = [question1, question2, question3, question4];
-
-    $scope.results = [];
-
-    var result = {
-        questionNumber: 0,
-        givenAnswer: '',
-        correctAnswer: '',
-        mark: '',
-        color: ''
-    };
-
+    //Global functions
     //Function to shuffle the array of questions
     var shuffleQuestions = function (a) {
         var j, x, i;
@@ -76,21 +15,144 @@ var categoryOne = miniProject.controller("CategoryOneCtrl", function ($scope, $t
         return a;
     };
 
+    //Application module
+    var miniProject = angular.module("MiniProject", []);
 
+    //Creates a service to fetch the question data for category one
+    var CategoryOneLoader = miniProject.service('CategoryOneLoader', function ($http, $rootScope) {
+        this.promise = null;
+        function makeRequest() {
+            return $http.get('/Home/Category_One_Question_Loader')
+              .then(function (resp) {
+                  return resp.data;
+              });
+        }
+        this.getPromise = function (update) {
+            if (update || !this.promise) {
+                this.promise = makeRequest();
+            }
+            return this.promise;
+        }
+
+    });
+
+    //Creates a service to fetch the question data for category two
+    var CategoryTwoLoader = miniProject.service('CategoryTwoLoader', function ($http, $rootScope) {
+        this.promise = null;
+        function makeRequest() {
+            return $http.get('/Home/Category_Two_Question_Loader')
+              .then(function (resp) {
+                  return resp.data;
+              });
+        }
+        this.getPromise = function (update) {
+            if (update || !this.promise) {
+                this.promise = makeRequest();
+            }
+            return this.promise;
+        }
+    });
+
+    //Controller for the index page
+    var indexCtrl = miniProject.controller("IndexCtrl", function ($window, $scope, $http) {
+        $scope.categoryNumber = 0;
+
+        $scope.loadCategory = function () {
+            $http.get("/Home/QuestionBoard/")
+                    .success(function (data, header, status, config) {
+                        console.log("Success!");
+                        $window.location.href = "/Home/QuestionBoard?categoryNumber=" + $scope.categoryNumber;
+                    })
+                    .error(function (data, header, status, config) {
+                        console.log("Failure");
+                        console.log(data);
+                    });
+    };
+});
+
+//Controller for the first game category
+    var categoryOne = miniProject.controller("CategoryOneCtrl", function ($scope, $timeout, $window, $http, CategoryOneLoader) {
+    //Scope variables
+    $scope.question;
+    $scope.answer = "";
+    $scope.success = false;
+    $scope.failure = false;
+    $scope.disabled = false;
+    $scope.gameEnded = false;
+    $scope.isReady = false;
+    $scope.score = 0;
+    $scope.results = [];
+    $scope.totalQuestions = 0;
     $scope.counter = 1;
-    $scope.totalQuestions = questions.length;
-    $scope.question = shuffleQuestions(questions)[questionIndex];
+    $scope.maxScore = 0;
+
+    //Local variables
+    var questionIndex = 0;
+    var questionsArray = [];
+    var result = {
+        questionNumber: 0,
+        givenAnswer: '',
+        correctAnswer: '',
+        mark: '',
+        color: ''
+    };
+
+    
+
+    //Fetches next question
+    var nextQuestion = function (skipped) {
+        if ($scope.counter >= $scope.totalQuestions) {
+            $scope.gameEnded = true;
+            console.log("no more questions");
+            return;
+        }
+        //if the current question has been skipped
+        if (skipped)
+        {
+            result = {
+                questionNumber: $scope.counter,
+                givenAnswer: '',
+                correctAnswer: $scope.question.Word,
+                mark: 'Skipped',
+                color: 'warning'
+            }
+
+            $scope.results.push(result);
+        }
+
+        questionIndex++;
+        $scope.counter++;
+        $scope.disabled = false;
+        $scope.success = false;
+        $scope.failure = false;
+        $scope.question = questionsArray[questionIndex];
+        $scope.answer = '';
+    };
+
+    //Quits game to home screen
+    var quit = function () {
+        $window.location.href = "/Home/Index";
+    };
+
+    //Loading questionnaire
+    CategoryOneLoader.getPromise().then(function (data) {
+        questionsArray = angular.fromJson(data);
+        $scope.totalQuestions = questionsArray.length;
+        $scope.question = shuffleQuestions(questionsArray)[questionIndex];
+        $scope.maxScore = $scope.totalQuestions * 2;
+        $scope.isReady = true;
+    });
 
     $scope.checkAnswer = function () {
-        if ($scope.answer.toLowerCase() === $scope.question.correctAnswer) {
+        if ($scope.answer.toLowerCase() === $scope.question.Word.toLowerCase()) {
             $scope.success = true;
             $scope.failure = false;
-            _Score++;
+            _Score+=2;
             $scope.score = _Score;
             result = {
                 questionNumber: $scope.counter,
                 givenAnswer: $scope.answer,
-                correctAnswer: $scope.question.correctAnswer,
+                correctAnswer: $scope.question.Word,
                 mark: 'Correct!',
                 color: 'success'
             }
@@ -105,7 +167,7 @@ var categoryOne = miniProject.controller("CategoryOneCtrl", function ($scope, $t
             result = {
                 questionNumber: $scope.counter,
                 givenAnswer: $scope.answer,
-                correctAnswer: $scope.question.correctAnswer,
+                correctAnswer: $scope.question.Word,
                 mark: 'Incorrect!',
                 color: 'danger'
             }
@@ -116,32 +178,20 @@ var categoryOne = miniProject.controller("CategoryOneCtrl", function ($scope, $t
 
         $scope.disabled = true;
         $timeout(nextQuestion, 3000);
+        console.log($scope.question);
     };
 
+    //Reloads the current game
     $scope.reload = function () {
         $window.location.reload();
     };
 
-    //Function to skip to the next question
-    var nextQuestion = function () {
-        if ($scope.counter >= $scope.totalQuestions) {
-            $scope.gameEnded = true;
-            console.log("no more questions");
-            return;
-        }
-        questionIndex++;
-        $scope.counter++;
-        $scope.disabled = false;
-        $scope.success = false;
-        $scope.failure = false;
-        $scope.question = questions[questionIndex];
-        $scope.answer = '';
-    };
-
-    var quit = function () {
-        $window.location.href = "/Home/Index";
-    };
-
     $scope.nextQuestion = nextQuestion;
     $scope.quit = quit;
-});
+    });
+
+    //Controller for the first game category
+    var categoryTwo = miniProject.controller("CategoryTwoCtrl", function ($scope, $timeout, $window, $http, CategoryTwoLoader) {
+        //Scope variables
+    });
+})();

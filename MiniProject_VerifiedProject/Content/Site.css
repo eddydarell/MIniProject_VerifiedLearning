@@ -59,7 +59,7 @@ img {
 
     .img-box > img {
         flex-shrink: 0;
-        min-width: 80%;
+        min-width: 30%;
     }
 
 .very-large-input {
@@ -106,4 +106,16 @@ td{
 
 tr:first-child{
     font-weight: bolder;
+}
+
+.loading-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.loading-box > img{
+    flex-shrink: 0;
+    min-width: 30%;
 }
