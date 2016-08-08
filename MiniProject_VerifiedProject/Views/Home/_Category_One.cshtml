@@ -1,9 +1,21 @@
-﻿@{
+﻿@model IEnumerable<MiniProject_VerifiedProject.Models.Picture2Word>
+@{
 
 }
 <div ng-controller="CategoryOneCtrl">
     <div class="col-md-12">
-        <div class="panel panel-default" ng-hide="gameEnded">
+        <div class="panel panel-info" ng-hide="isReady">
+            <div class="panel-heading">
+                <h3 class="text-center">Loading...</h3>
+            </div>
+            <div class="panel-body">
+                <div class="loading-box text-center">
+                     <img src="~/Content/Images/loading.gif" alt="loading animation" />
+
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default" ng-hide="gameEnded || !isReady">
             <div class="panel-heading fixed-heading">
                 <div class="row">
                     <div class="col-sm-3">
@@ -16,11 +28,10 @@
                         <h3 class="text-center">Countdown</h3>
                     </div>
                 </div>
-
             </div>
             <div class="panel-body">
                 <div class="text-center img-box">
-                    <img ng-src="{{ question.imageUrl }}" alt="Image here" />
+                    <img ng-src="{{ question.ImageURL }}" alt="Image here" />
                 </div>
                 <hr />
                 <div class="text-center row">
@@ -44,7 +55,7 @@
                 <hr />
                 <p class="text-center">
                     <b class="incorrect">{{ answer }}</b> is not correct<br />
-                    The correct answer is <b class="correct">{{ question.correctAnswer }}</b>
+                    The correct answer is <b class="correct">{{ question.Word }}</b>
                 </p>
             </div>
             <hr />
@@ -63,8 +74,8 @@
                     </div>
                     <div class="col-lg-3 text-center">
                         <h3>
-                            <button ng-click="nextQuestion()" class="btn btn-lg btn-warning">
-                                Next
+                            <button ng-click="nextQuestion(true)" class="btn btn-lg btn-warning">
+                                Skip
                                 <span class="glyphicon glyphicon-arrow-right"></span>
                             </button>
                         </h3>
@@ -73,32 +84,55 @@
             </div>
         </div>
         <div ng-show="gameEnded">
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                    <h3 class="text-center">Your Results</h3>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="text-center">Your Results</h3>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <td>Question Number</td>
+                                        <td>Your Answer</td>
+                                        <td>Correct Answer</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr ng-repeat="element in results">
+                                        <td class="text-center">{{ element.questionNumber }}</td>
+                                        <td class="text-center">{{ element.givenAnswer }}</td>
+                                        <td class="text-center">{{ element.correctAnswer }}</td>
+                                        <td ng-class="element.color" class="text-center">{{ element.mark }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right">Your Score: {{ score }} / {{ maxScore }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-                <div class="panel-body">
-                    <table class="table table-striped">
-                        <tbody>
-                            <tr>
-                                <td>Question Number</td>
-                                <td>Your Answer</td>
-                                <td>Correct Answer</td>
-                                <td></td>
-                            </tr>
-                            <tr ng-repeat="element in results">
-                                <td class="text-center">{{ element.questionNumber }}</td>
-                                <td class="text-center">{{ element.givenAnswer }}</td>
-                                <td class="text-center">{{ element.correctAnswer }}</td>
-                                <td ng-class="element.color" class="text-center">{{ element.mark }}</td>
-                            </tr>
-                            <tr>
-                                <td class="text-right">Your Score: {{ score }} / {{ 2 }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="col-md-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="text-center">Leader-board</h3>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <td>Name</td>
+                                        <td>Score</td>
+                                    </tr>
+                                    <tr></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
+            
             <hr />
             <div class="btn-group">
                 <button class="btn btn-default btn-lg" ng-click="reload()">Try Again!</button>

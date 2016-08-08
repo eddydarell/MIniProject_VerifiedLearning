@@ -36,7 +36,7 @@
     <hr />
     <div class="row">
         <div class="col-md-4 text-center" name="btns">
-            <a href="#btns" ng-click="choice = 1" class="btn btn-primary btn-lg" title="Easy learning">Easy Learning</a>
+            <a href="#categoriesButtons" ng-click="choice = 1" class="btn btn-primary btn-lg" title="Easy learning">Easy Learning</a>
         </div>
         <div class="col-md-4 text-center">
             <a href="#btns" ng-click="choice = 2" class="btn btn-warning btn-lg" title="Challenges">Challenges</a>
@@ -46,7 +46,7 @@
         </div>
     </div>
     <hr ng-show="choice"/>
-    <div class="row" ng-show="choice==1">
+    <div class="row" ng-show="choice==1" name="categoriesButtons">
         <div class="col-md-3">
             <div class="panel panel-info" ng-click="categoryNumber = 1;loadCategory()">
                 <div class="panel-heading clickable">
