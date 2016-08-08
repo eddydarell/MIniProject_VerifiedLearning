@@ -90,25 +90,25 @@ namespace MiniProject_VerifiedProject.Migrations
             context.WordPuzzles.AddOrUpdate(seedWordPuzzle17);
 
 
-            WordPuzzle seedWordPuzzle18 = new WordPuzzle { Word = "This", WordSentenceIndex = 1, Sentence = "This was a proposition" };
-            WordPuzzle seedWordPuzzle19 = new WordPuzzle { Word = "was", WordSentenceIndex = 2, Sentence = "This was a proposition" };
-            WordPuzzle seedWordPuzzle20 = new WordPuzzle { Word = "a", WordSentenceIndex = 3, Sentence = "This was a proposition" };
-            WordPuzzle seedWordPuzzle21 = new WordPuzzle { Word = "proposition", WordSentenceIndex = 4, Sentence = "This was a proposition" };
+            WordPuzzle seedWordPuzzle18 = new WordPuzzle { Word = "This", WordSentenceIndex = 1, Sentence = "This was a sentence" };
+            WordPuzzle seedWordPuzzle19 = new WordPuzzle { Word = "was", WordSentenceIndex = 2, Sentence = "This was a sentence" };
+            WordPuzzle seedWordPuzzle20 = new WordPuzzle { Word = "a", WordSentenceIndex = 3, Sentence = "This was a sentence" };
+            WordPuzzle seedWordPuzzle21 = new WordPuzzle { Word = "proposition", WordSentenceIndex = 4, Sentence = "This was a sentence" };
             context.WordPuzzles.AddOrUpdate(seedWordPuzzle18);
             context.WordPuzzles.AddOrUpdate(seedWordPuzzle19);
             context.WordPuzzles.AddOrUpdate(seedWordPuzzle20);
             context.WordPuzzles.AddOrUpdate(seedWordPuzzle21);
 
-            User seedTop1 = new User { Name = "Top1", Category1Score = 10,  Category1ScoreDate = DateTime.Now,  Category2Score = 10, Category2ScoreDate = DateTime.Now, Category3Score = 10, Category3ScoreDate = DateTime.Now, Category4Score = 10, Category4ScoreDate = DateTime.Now, CategoryMixScore = 10, CategoryMixScoreDate = DateTime.Now };
-            User seedTop2 = new User { Name = "Top2",  Category1Score = 9, Category1ScoreDate = DateTime.Now, Category2Score = 9, Category2ScoreDate = DateTime.Now, Category3Score = 9, Category3ScoreDate = DateTime.Now, Category4Score = 9, Category4ScoreDate = DateTime.Now, CategoryMixScore = 9, CategoryMixScoreDate = DateTime.Now };
-            User seedTop3 = new User { Name = "Top3", Category1Score = 8, Category1ScoreDate = DateTime.Now, Category2Score = 8, Category2ScoreDate = DateTime.Now, Category3Score = 8, Category3ScoreDate = DateTime.Now, Category4Score = 8, Category4ScoreDate = DateTime.Now, CategoryMixScore = 8, CategoryMixScoreDate = DateTime.Now };
-            User seedTop4 = new User { Name = "Top4", Category1Score = 7, Category1ScoreDate = DateTime.Now, Category2Score = 7, Category2ScoreDate = DateTime.Now, Category3Score = 7, Category3ScoreDate = DateTime.Now, Category4Score = 7, Category4ScoreDate = DateTime.Now, CategoryMixScore = 7, CategoryMixScoreDate = DateTime.Now };
-            User seedTop5 = new User { Name = "Top5", Category1Score = 6, Category1ScoreDate = DateTime.Now, Category2Score = 6, Category2ScoreDate = DateTime.Now, Category3Score = 6, Category3ScoreDate = DateTime.Now, Category4Score = 6, Category4ScoreDate = DateTime.Now, CategoryMixScore = 6, CategoryMixScoreDate = DateTime.Now };
-            User seedTop6 = new User { Name = "Top6", Category1Score = 5, Category1ScoreDate = DateTime.Now, Category2Score = 5, Category2ScoreDate = DateTime.Now, Category3Score = 5, Category3ScoreDate = DateTime.Now, Category4Score = 5, Category4ScoreDate = DateTime.Now, CategoryMixScore = 5, CategoryMixScoreDate = DateTime.Now };
-            User seedTop7 = new User { Name = "Top7", Category1Score = 4, Category1ScoreDate = DateTime.Now, Category2Score = 4, Category2ScoreDate = DateTime.Now, Category3Score = 4, Category3ScoreDate = DateTime.Now, Category4Score = 4, Category4ScoreDate = DateTime.Now, CategoryMixScore = 4, CategoryMixScoreDate = DateTime.Now };
-            User seedTop8 = new User { Name = "Top8", Category1Score = 3, Category1ScoreDate = DateTime.Now, Category2Score = 3, Category2ScoreDate = DateTime.Now, Category3Score = 3, Category3ScoreDate = DateTime.Now, Category4Score = 3, Category4ScoreDate = DateTime.Now, CategoryMixScore = 3, CategoryMixScoreDate = DateTime.Now };
-            User seedTop9 = new User { Name = "Top9", Category1Score = 2, Category1ScoreDate = DateTime.Now, Category2Score = 2, Category2ScoreDate = DateTime.Now, Category3Score = 2, Category3ScoreDate = DateTime.Now, Category4Score = 2, Category4ScoreDate = DateTime.Now, CategoryMixScore = 2, CategoryMixScoreDate = DateTime.Now };
-            User seedTop10 = new User { Name = "Top10", Category1Score = 1, Category1ScoreDate = DateTime.Now, Category2Score = 1, Category2ScoreDate = DateTime.Now, Category3Score = 1, Category3ScoreDate = DateTime.Now, Category4Score = 1, Category4ScoreDate = DateTime.Now, CategoryMixScore = 1, CategoryMixScoreDate = DateTime.Now };
+            User seedTop1 = new User { Name = "Top1", Category1Score = 10,  Category1ScoreDate = DateTime.Now,  Category2Score = 10, Category2ScoreDate = DateTime.Now, Category3Score = 10, Category3ScoreDate = DateTime.Now, Category4Score = 10, Category4ScoreDate = DateTime.Now,};
+            User seedTop2 = new User { Name = "Top2",  Category1Score = 9, Category1ScoreDate = DateTime.Now, Category2Score = 9, Category2ScoreDate = DateTime.Now, Category3Score = 9, Category3ScoreDate = DateTime.Now, Category4Score = 9, Category4ScoreDate = DateTime.Now, };
+            User seedTop3 = new User { Name = "Top3", Category1Score = 8, Category1ScoreDate = DateTime.Now, Category2Score = 8, Category2ScoreDate = DateTime.Now, Category3Score = 8, Category3ScoreDate = DateTime.Now, Category4Score = 8, Category4ScoreDate = DateTime.Now, };
+            User seedTop4 = new User { Name = "Top4", Category1Score = 7, Category1ScoreDate = DateTime.Now, Category2Score = 7, Category2ScoreDate = DateTime.Now, Category3Score = 7, Category3ScoreDate = DateTime.Now, Category4Score = 7, Category4ScoreDate = DateTime.Now, };
+            User seedTop5 = new User { Name = "Top5", Category1Score = 6, Category1ScoreDate = DateTime.Now, Category2Score = 6, Category2ScoreDate = DateTime.Now, Category3Score = 6, Category3ScoreDate = DateTime.Now, Category4Score = 6, Category4ScoreDate = DateTime.Now, };
+            User seedTop6 = new User { Name = "Top6", Category1Score = 5, Category1ScoreDate = DateTime.Now, Category2Score = 5, Category2ScoreDate = DateTime.Now, Category3Score = 5, Category3ScoreDate = DateTime.Now, Category4Score = 5, Category4ScoreDate = DateTime.Now, };
+            User seedTop7 = new User { Name = "Top7", Category1Score = 4, Category1ScoreDate = DateTime.Now, Category2Score = 4, Category2ScoreDate = DateTime.Now, Category3Score = 4, Category3ScoreDate = DateTime.Now, Category4Score = 4, Category4ScoreDate = DateTime.Now, };
+            User seedTop8 = new User { Name = "Top8", Category1Score = 3, Category1ScoreDate = DateTime.Now, Category2Score = 3, Category2ScoreDate = DateTime.Now, Category3Score = 3, Category3ScoreDate = DateTime.Now, Category4Score = 3, Category4ScoreDate = DateTime.Now, };
+            User seedTop9 = new User { Name = "Top9", Category1Score = 2, Category1ScoreDate = DateTime.Now, Category2Score = 2, Category2ScoreDate = DateTime.Now, Category3Score = 2, Category3ScoreDate = DateTime.Now, Category4Score = 2, Category4ScoreDate = DateTime.Now, };
+            User seedTop10 = new User { Name = "Top10", Category1Score = 1, Category1ScoreDate = DateTime.Now, Category2Score = 1, Category2ScoreDate = DateTime.Now, Category3Score = 1, Category3ScoreDate = DateTime.Now, Category4Score = 1, Category4ScoreDate = DateTime.Now, };
 
             context.Users.AddOrUpdate(seedTop1);
             context.Users.AddOrUpdate(seedTop2);
