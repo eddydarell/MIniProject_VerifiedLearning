@@ -68,6 +68,10 @@ img {
     padding-left: 20px;
 }
 
+.single-character{
+    width: 30px;
+}
+
 .big-btn {
     font-size: 2.7em;
     min-width: 100%;
@@ -118,4 +122,57 @@ tr:first-child{
 .loading-box > img{
     flex-shrink: 0;
     min-width: 30%;
+}
+
+.color-box{
+    border: 2px solid black;
+    min-width: 100px;
+    max-width: 100px;
+    min-height: 100px;
+    margin-left: 25%;
+    background-color: crimson;
+}
+
+.small-color-box{
+    border: 2px solid black;
+    min-width: 25px;
+    max-width: 25px;
+    min-height: 25px;
+}
+
+color-box-container{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.Blue{
+    background-color: blue;
+}
+
+.Red{
+    background-color: red;
+}
+
+.Green{
+    background-color: green;
+}
+
+.Yellow{
+    background-color: yellow;
+}
+
+.Orange{
+    background-color: orange;
+}
+
+.Black{
+    background-color:black;
+}
+
+.White{
+    background-color: white;
+}
+
+.NoColor{
+    background-color: lightgray;
 }

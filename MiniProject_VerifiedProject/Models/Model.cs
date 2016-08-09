@@ -20,8 +20,7 @@ namespace MiniProject_VerifiedProject.Models
     {
         [Key]
         public int ID { get; set; }
-        public string WrongPunctuation { get; set; }
-        public string CorrectPunctuation { get; set; }
+        public string Sequence { get; set; }
 
     }
 

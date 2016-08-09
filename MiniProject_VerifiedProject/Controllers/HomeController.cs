@@ -69,6 +69,15 @@ namespace MiniProject_VerifiedProject.Controllers
             return Json(json, JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult Category_Three_Question_Loader()
+        {
+            Repository repo = new Repository();
+
+            var model = repo.GetAllColor2Words().ToList();
+            var json = new JavaScriptSerializer().Serialize(model);
+            return Json(json, JsonRequestBehavior.AllowGet);
+        }
+
         //Bellow, Controller actions I set for each category separately
         //This action shall return a partial view to be rendered in the main Board
         public PartialViewResult Category_One()
@@ -79,6 +88,11 @@ namespace MiniProject_VerifiedProject.Controllers
         public PartialViewResult Category_Two()
         {
             return PartialView("_Category_Two");
+        }
+
+        public PartialViewResult Category_Three()
+        {
+            return PartialView("_Category_Three");
         }
     }
 }

@@ -7,13 +7,13 @@ namespace MiniProject_VerifiedProject.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ContextAdd : IMigrationMetadata
+    public sealed partial class Initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ContextAdd));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201607221153309_Context.Add"; }
+            get { return "201608081247597_Initial"; }
         }
         
         string IMigrationMetadata.Source

@@ -161,13 +161,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201607221145288_Initial.cs" />
-    <Compile Include="Migrations\201607221145288_Initial.Designer.cs">
-      <DependentUpon>201607221145288_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607221153309_Context.Add.cs" />
-    <Compile Include="Migrations\201607221153309_Context.Add.Designer.cs">
-      <DependentUpon>201607221153309_Context.Add.cs</DependentUpon>
+    <Compile Include="Migrations\201608081247597_Initial.cs" />
+    <Compile Include="Migrations\201608081247597_Initial.Designer.cs">
+      <DependentUpon>201608081247597_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Model.cs" />
@@ -1057,14 +1053,7 @@
     <Content Include="Views\Home\QuestionBoard.cshtml" />
     <Content Include="Views\Home\_Category_One.cshtml" />
     <Content Include="Views\Home\_Category_Two.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201607221145288_Initial.resx">
-      <DependentUpon>201607221145288_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607221153309_Context.Add.resx">
-      <DependentUpon>201607221153309_Context.Add.cs</DependentUpon>
-    </EmbeddedResource>
+    <Content Include="Views\Home\_Category_Three.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -1072,6 +1061,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201608081247597_Initial.resx">
+      <DependentUpon>201608081247597_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
