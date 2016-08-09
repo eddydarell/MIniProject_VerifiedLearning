@@ -32,8 +32,7 @@ namespace MiniProject_VerifiedProject.Migrations
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        WrongPunctuation = c.String(),
-                        CorrectPunctuation = c.String(),
+                        Sequence = c.String(),
                     })
                 .PrimaryKey(t => t.ID);
             

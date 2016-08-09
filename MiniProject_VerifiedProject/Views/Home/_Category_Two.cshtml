@@ -31,7 +31,11 @@
                     Replace the stars (*) with the correct punctuation sign.
                 </p>
                 <hr />
-
+                <div class="well well-sm very-large-input">
+                    <span ng-bind-html="deliberatelyTrustDangerousSnippet()"></span>
+                    <hr />
+                </div>
+                <hr />
                 <div class="col-md-2">
                     <button ng-click="checkAnswer()" class="btn btn-success btn-sm big-btn">OK</button>
                 </div>
@@ -47,8 +51,8 @@
                 <h1 class="text-center">Failed!</h1>
                 <hr />
                 <p class="text-center">
-                    Punctuation is not correct<br />
-                    The correct answer is <b class="correct">{{ question.correctAnswer }}</b>
+                    Punctuation is incorrect<br />
+                    The correct answer is <b class="correct">{{ question.Sequence }}</b>
                 </p>
             </div>
             <hr />
@@ -88,8 +92,8 @@
                                 <tbody>
                                     <tr>
                                         <td>Question Number</td>
-                                        <td>Your Answer</td>
-                                        <td>Correct Answer</td>
+                                        <td>Your Answers</td>
+                                        <td>Correct Answers</td>
                                         <td></td>
                                     </tr>
                                     <tr ng-repeat="element in results">
